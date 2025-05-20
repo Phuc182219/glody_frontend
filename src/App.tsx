@@ -1,22 +1,22 @@
-import React from 'react';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import React from "react";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
 // Components
-import Header from './components/Header';
+import Header from "./components/Header";
 
 // Pages
-import Home from './pages/Home';
-import About from './pages/About';
-import Services from './pages/Services';
-import Contact from './pages/Contact';
-import Login from './pages/Login';
-import Community from './pages/Community';
-import VisaInfo from './pages/VisaInfo';
-import Upgrade from './pages/Upgrade';
-import AIHub from './pages/AIHub';
-import Profile from './pages/Profile';
-import Payment from './pages/Payment';
-import Register from './pages/Register';
+import Home from "./pages/Home";
+import About from "./pages/About";
+import Services from "./pages/Services";
+import Contact from "./pages/Contact";
+import Login from "./pages/Login";
+import Community from "./pages/Community";
+import VisaInfo from "./pages/VisaInfo";
+import Upgrade from "./pages/Upgrade";
+import AIHub from "./pages/AiHub";
+import Profile from "./pages/Profile";
+import Payment from "./pages/Payment";
+import Register from "./pages/Register";
 
 const App: React.FC = () => {
   return (
@@ -34,7 +34,18 @@ const App: React.FC = () => {
             <Route path="/community" element={<Community />} />
             <Route path="/visa-info" element={<VisaInfo />} />
             <Route path="/upgrade" element={<Upgrade />} />
-            <Route path="/ai-hub" element={<AIHub key={window.location.pathname + window.location.search + window.location.hash} />} />
+            <Route
+              path="/ai-hub"
+              element={
+                <AIHub
+                  key={
+                    window.location.pathname +
+                    window.location.search +
+                    window.location.hash
+                  }
+                />
+              }
+            />
             <Route path="/profile" element={<Profile />} />
             <Route path="/payment" element={<Payment />} />
           </Routes>
@@ -44,4 +55,4 @@ const App: React.FC = () => {
   );
 };
 
-export default App; 
+export default App;

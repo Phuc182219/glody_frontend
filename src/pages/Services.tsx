@@ -315,90 +315,9 @@ const Services: React.FC = () => {
         </div>
       </section>
 
-      {/* Services Section */}
-      <section className="container-custom py-20">
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-          {services.map((service, index) => (
-            <div key={index} className="bg-white rounded-xl p-8 shadow-lg hover:shadow-xl transition-shadow">
-              <div className="text-primary-600 mb-4">
-                {service.icon}
-              </div>
-              <h3 className="text-xl font-bold mb-4">{service.title}</h3>
-              <p className="text-gray-600 mb-6">{service.description}</p>
-              <Link to={`/contact`} className="text-primary-600 hover:text-primary-700 font-medium">
-                Tìm hiểu thêm →
-              </Link>
-            </div>
-          ))}
-        </div>
-      </section>
-
       {/* Pricing Section */}
-      <section className="bg-gray-50 py-20">
-        <div className="container-custom">
-          <div className="text-center mb-16">
-            <h2 className="heading-2 mb-4">Bảng Giá</h2>
-            <p className="paragraph max-w-2xl mx-auto">
-              Chọn gói dịch vụ phù hợp với nhu cầu của doanh nghiệp bạn
-            </p>
-          </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {pricingPlans.map((plan, index) => (
-              <div
-                key={index}
-                className={`bg-white rounded-xl p-8 shadow-lg ${
-                  index === 1 ? 'border-2 border-primary-500 relative' : ''
-                }`}
-              >
-                {index === 1 && (
-                  <span className="absolute top-0 right-0 bg-primary-500 text-white px-4 py-1 rounded-bl-lg rounded-tr-lg text-sm font-medium">
-                    Phổ biến
-                  </span>
-                )}
-                <h3 className="text-xl font-bold mb-2">{plan.name}</h3>
-                <div className="text-gray-600 mb-4">{plan.description}</div>
-                <div className="text-3xl font-bold mb-6">
-                  {plan.price} <span className="text-lg font-normal text-gray-600">/ tháng</span>
-                </div>
-                <ul className="space-y-4 mb-8">
-                  {plan.features.map((feature, featureIndex) => (
-                    <li key={featureIndex} className="flex items-center">
-                      <svg className="w-5 h-5 text-primary-600 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                      </svg>
-                      {feature}
-                    </li>
-                  ))}
-                </ul>
-                <Link
-                  to="/contact"
-                  className={`block text-center py-2 px-4 rounded-lg font-medium transition-colors ${
-                    index === 1
-                      ? 'bg-primary-600 text-white hover:bg-primary-700'
-                      : 'border-2 border-primary-600 text-primary-600 hover:bg-primary-50'
-                  }`}
-                >
-                  Bắt đầu ngay
-                </Link>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
 
-      {/* CTA Section */}
-      <section className="container-custom py-20">
-        <div className="bg-primary-900 rounded-2xl p-12 text-center text-white">
-          <h2 className="heading-2 mb-4">Bạn cần tư vấn thêm?</h2>
-          <p className="text-xl mb-8">
-            Đội ngũ chuyên gia của chúng tôi luôn sẵn sàng hỗ trợ bạn 24/7
-          </p>
-          <Link to="/contact" className="btn bg-white text-primary-900 hover:bg-gray-100">
-            Liên hệ ngay
-          </Link>
-        </div>
-      </section>
 
       {/* Booking Popup */}
       {showBooking && (
