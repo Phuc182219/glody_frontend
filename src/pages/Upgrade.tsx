@@ -66,10 +66,10 @@ const Upgrade: React.FC = () => {
       {/* Pricing Cards */}
       <main className="container mx-auto px-4 flex-1 flex flex-col items-center">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 w-full max-w-5xl mb-16">
-          {plans.map((plan, idx) => (
+          {plans.map((plan) => (
             <div
               key={plan.name}
-              className={`flex flex-col border-2 ${plan.highlight ? 'border-purple-300' : 'border-gray-200'} rounded-2xl bg-white shadow-sm p-8 items-center transition-all`}
+              className="flex flex-col border-2 border-gray-200 rounded-2xl bg-white shadow-sm p-8 items-center transition-all hover:border-purple-300 hover:shadow-md hover:scale-105"
             >
               <div className="text-2xl font-bold mb-2 text-black">{plan.name}</div>
               <div className={`text-3xl font-extrabold mb-4 ${plan.price === 'Miễn Phí' ? 'text-purple-500' : 'text-purple-600'}`}>{plan.price}</div>

@@ -85,12 +85,14 @@ const Community: React.FC = () => {
             {qrCodes.map((qr, idx) => (
               <div
                 key={qr.label}
-                className={`flex flex-col items-center bg-white rounded-2xl p-8 md:w-80 w-full mb-8 md:mb-0 ${qr.highlight ? 'border-2 border-purple-500 shadow-lg' : 'shadow'}`}
+                className={`flex flex-col items-center bg-white rounded-2xl p-8 md:w-80 w-full mb-8 md:mb-0 border-2 border-transparent shadow transition-all duration-300 hover:scale-105 hover:border-purple-500 hover:shadow-lg ${qr.highlight ? 'border-purple-500 shadow-lg' : ''}`}
               >
-                <img src={qr.img} alt={qr.label} className="mb-4 w-44 h-44" />
+                <img src={qr.img} alt={qr.label} className="mb-4 w-44 h-44 transition-transform duration-300 ease-in-out hover:scale-110" />
                 <div className={`text-center font-bold text-base mb-1 ${qr.highlight ? 'text-black' : 'text-gray-700'}`}>{qr.label}</div>
-                {qr.highlight && (
+                {qr.link ? (
                   <a href={qr.link} className="text-purple-600 font-semibold hover:underline text-sm mt-1 block text-center">Tham Gia Ngay</a>
+                ) : (
+                  <span className="text-purple-600 font-semibold text-sm mt-1 block text-center">Tham Gia Ngay</span>
                 )}
               </div>
             ))}
